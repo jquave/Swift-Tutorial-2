@@ -16,6 +16,7 @@ class RootViewController: UIViewController, UITextFieldDelegate {
     var userName = ""
 
     var buttonFinalFrame: CGRect?
+    var buttonHiddenFrame: CGRect?
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -65,9 +66,27 @@ class RootViewController: UIViewController, UITextFieldDelegate {
         buttonFinalFrame = frame
         frame.origin.y += UIScreen.mainScreen().bounds.height
         button.frame = frame
+        buttonHiddenFrame = button.frame
+        button.addTarget(self, action: "OkayPressed:", forControlEvents: UIControlEvents.TouchUpInside)
         view.addSubview(button)
-        
     
+    }
+    
+    func OkayPressed(sender: UIButton!) {
+        hideResult()
+    }
+    
+    func hideResult() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.button.frame = self.buttonHiddenFrame!
+            self.textLabel.alpha = 0
+        })
+        
+        self.textField.enabled = true
+        self.title = ""
+        self.textField.text = ""
+        navigationController.navigationBarHidden = true
+
     }
 
     func showResult() {
@@ -76,6 +95,7 @@ class RootViewController: UIViewController, UITextFieldDelegate {
             self.textLabel.alpha = 1
         })
         
+        self.textField.enabled = false
         self.title = userName
         navigationController.navigationBarHidden = false
     }
