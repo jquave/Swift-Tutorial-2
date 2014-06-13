@@ -10,9 +10,9 @@
 		02952193194B6CD800F738FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02952192194B6CD800F738FF /* AppDelegate.swift */; };
 		02952196194B6CD800F738FF /* SwiftData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02952194194B6CD800F738FF /* SwiftData.xcdatamodeld */; };
 		02952198194B6CD800F738FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02952197194B6CD800F738FF /* ViewController.swift */; };
-		0295219B194B6CD800F738FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02952199194B6CD800F738FF /* Main.storyboard */; };
 		0295219D194B6CD800F738FF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0295219C194B6CD800F738FF /* Images.xcassets */; };
 		029521A9194B6CD800F738FF /* SwiftDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029521A8194B6CD800F738FF /* SwiftDataTests.swift */; };
+		029521B3194B6D8300F738FF /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029521B2194B6D8300F738FF /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,11 +31,11 @@
 		02952192194B6CD800F738FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02952195194B6CD800F738FF /* SwiftData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftData.xcdatamodel; sourceTree = "<group>"; };
 		02952197194B6CD800F738FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0295219A194B6CD800F738FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0295219C194B6CD800F738FF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		029521A2194B6CD800F738FF /* SwiftDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		029521A7194B6CD800F738FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		029521A8194B6CD800F738FF /* SwiftDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataTests.swift; sourceTree = "<group>"; };
+		029521B2194B6D8300F738FF /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				02952192194B6CD800F738FF /* AppDelegate.swift */,
+				029521B2194B6D8300F738FF /* RootViewController.swift */,
 				02952197194B6CD800F738FF /* ViewController.swift */,
-				02952199194B6CD800F738FF /* Main.storyboard */,
 				0295219C194B6CD800F738FF /* Images.xcassets */,
 				02952194194B6CD800F738FF /* SwiftData.xcdatamodeld */,
 				02952190194B6CD800F738FF /* Supporting Files */,
@@ -192,7 +192,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0295219B194B6CD800F738FF /* Main.storyboard in Resources */,
 				0295219D194B6CD800F738FF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +212,7 @@
 			files = (
 				02952198194B6CD800F738FF /* ViewController.swift in Sources */,
 				02952193194B6CD800F738FF /* AppDelegate.swift in Sources */,
+				029521B3194B6D8300F738FF /* RootViewController.swift in Sources */,
 				02952196194B6CD800F738FF /* SwiftData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,17 +234,6 @@
 			targetProxy = 029521A3194B6CD800F738FF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		02952199194B6CD800F738FF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0295219A194B6CD800F738FF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		029521AA194B6CD800F738FF /* Debug */ = {
@@ -403,6 +392,7 @@
 				029521AE194B6CD800F738FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		029521AF194B6CD800F738FF /* Build configuration list for PBXNativeTarget "SwiftDataTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +401,7 @@
 				029521B1194B6CD800F738FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
