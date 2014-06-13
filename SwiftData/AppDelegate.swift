@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appWindow.backgroundColor = UIColor.cyanColor()
         
         let navigationController = UINavigationController()
-        let rootViewController = UIViewController()
+        let rootViewController = RootViewController(nibName: nil, bundle: nil)
         
         appWindow.rootViewController = rootViewController
         appWindow.makeKeyAndVisible()

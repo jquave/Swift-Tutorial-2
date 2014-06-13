@@ -17,9 +17,18 @@ class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        createViews()
     }
+    
+    func createViews() {
+        var frame = CGRectMake(0, 0, 320, 44)
+        var helloWorldLabel = UILabel(frame: frame)
+        helloWorldLabel.text = "Hello World!"
+        helloWorldLabel.textAlignment = NSTextAlignment.Center
+        helloWorldLabel.center = view.center
+        view.addSubview(helloWorldLabel)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
