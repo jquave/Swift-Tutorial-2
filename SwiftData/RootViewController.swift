@@ -13,6 +13,7 @@ class RootViewController: UIViewController, UITextFieldDelegate {
     var textField = UITextField()
     var textLabel = UILabel()
     var button = UIButton()
+    var userName = ""
 
     var buttonFinalFrame: CGRect?
     
@@ -53,6 +54,7 @@ class RootViewController: UIViewController, UITextFieldDelegate {
         
         textField.placeholder = "Name"
         textField.borderStyle = UITextBorderStyle.Line
+        textField.backgroundColor = UIColor(red: 1.0, green: 0.9, blue: 0.8, alpha: 1)
         view.addSubview(textField)
         textField.delegate = self
         
@@ -65,6 +67,7 @@ class RootViewController: UIViewController, UITextFieldDelegate {
         button.frame = frame
         view.addSubview(button)
         
+    
     }
 
     func showResult() {
@@ -72,11 +75,15 @@ class RootViewController: UIViewController, UITextFieldDelegate {
             self.button.frame = self.buttonFinalFrame!
             self.textLabel.alpha = 1
         })
+        
+        self.title = userName
+        navigationController.navigationBarHidden = false
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         textField.resignFirstResponder()
-        textLabel.text = "Hello \(textField.text)!"
+        userName = textField.text
+        textLabel.text = "Hello \(userName)!"
         showResult()
         return true
     }

@@ -20,10 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
         appWindow.backgroundColor = UIColor(red: 1.0, green: 0.6, blue: 0.3, alpha: 1.0)
         
-        let navigationController = UINavigationController()
         let rootViewController = RootViewController(nibName: nil, bundle: nil)
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.navigationBarHidden = true
         
-        appWindow.rootViewController = rootViewController
+        appWindow.rootViewController = navigationController
         appWindow.makeKeyAndVisible()
         
         window = appWindow
