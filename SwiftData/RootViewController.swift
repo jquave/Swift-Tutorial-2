@@ -10,8 +10,11 @@ import UIKit
 
 class RootViewController: UIViewController, UITextFieldDelegate {
 
-    var textField: UITextField?
-    var textLabel: UILabel?
+    var textField = UITextField()
+    var textLabel = UILabel()
+    var button = UIButton()
+
+    var buttonFinalFrame: CGRect?
     
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -28,43 +31,53 @@ class RootViewController: UIViewController, UITextFieldDelegate {
         var margin = CGPointMake(15, 5)
         
         var frame = CGRectMake(margin.x, 0, 320-margin.x*2, 44)
-        let helloWorldLabel = UILabel(frame: frame)
-        textLabel = helloWorldLabel
+        textLabel.frame = frame
         
-        helloWorldLabel.text = "Hello World!"
-        helloWorldLabel.textAlignment = NSTextAlignment.Center
-        helloWorldLabel.center = view.center
-        frame = helloWorldLabel.frame
+        textLabel.text = "Hello World!"
+        textLabel.textAlignment = NSTextAlignment.Center
+        textLabel.center = view.center
+        textLabel.alpha = 0
+        frame = textLabel.frame
         
         // Previously we centered the frame
         // We're going to add 3 44-point height fields, so move it up by that much
         // This leaves the controls on the top half of the screen
         frame.origin.y -= (44+margin.y)*3
-        helloWorldLabel.frame = frame
-        view.addSubview(helloWorldLabel)
+        textLabel.frame = frame
+        view.addSubview(textLabel)
         
         
-        frame = helloWorldLabel.frame
+        frame = textLabel.frame
         frame.origin.y += 44 + margin.y
-        let nameField = UITextField(frame: frame)
-        textField = nameField
+        textField.frame = frame
         
-        nameField.placeholder = "Name"
-        nameField.borderStyle = UITextBorderStyle.Line
-        view.addSubview(nameField)
-        nameField.delegate = self
+        textField.placeholder = "Name"
+        textField.borderStyle = UITextBorderStyle.Line
+        view.addSubview(textField)
+        textField.delegate = self
         
         
         frame.origin.y += 44 + margin.y
-        var okayButton = UIButton(frame: frame)
-        okayButton.setTitle("Okay", forState: UIControlState.Normal)
-        view.addSubview(okayButton)
+        button = UIButton(frame: frame)
+        button.setTitle("Okay", forState: UIControlState.Normal)
+        buttonFinalFrame = frame
+        frame.origin.y += UIScreen.mainScreen().bounds.height
+        button.frame = frame
+        view.addSubview(button)
         
+    }
+
+    func showResult() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.button.frame = self.buttonFinalFrame!
+            self.textLabel.alpha = 1
+        })
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         textField.resignFirstResponder()
-        textLabel!.text = "Hello \(textField.text)!"
+        textLabel.text = "Hello \(textField.text)!"
+        showResult()
         return true
     }
 
