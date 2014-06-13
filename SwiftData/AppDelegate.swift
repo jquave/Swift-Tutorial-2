@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
 
         let appWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
-        appWindow.backgroundColor = UIColor.cyanColor()
+        appWindow.backgroundColor = UIColor(red: 1.0, green: 0.6, blue: 0.3, alpha: 1.0)
         
         let navigationController = UINavigationController()
         let rootViewController = RootViewController(nibName: nil, bundle: nil)
